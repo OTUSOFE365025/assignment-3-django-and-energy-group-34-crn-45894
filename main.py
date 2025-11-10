@@ -24,9 +24,20 @@ from db.models import *
 ############################################################################
 """ Replace the code below with your own """
 
-# Seed a few users in the database
-User.objects.create(name='Dan')
-User.objects.create(name='Robert')
 
-for u in User.objects.all():
-    print(f'ID: {u.id} \tUsername: {u.name}')
+#seed our Product model with upc codes,names and prices
+# def seeding_values():
+    
+products=[
+    {"upc":12345,"name":'Coffee',"price":8.32},
+    {"upc":67890,"name":'Muffin',"price":2.50},
+    {"upc":20318,"name":'Flour',"price":18.03},
+    {"upc":67672,"name":'Apple',"price":1.99}
+]
+for p in products:
+    Product.objects.get_or_create(upc=p["upc"],name=p["name"],price=p["price"])
+        
+for p in Product.objects.all():
+    print(f'UPC: {p.upc} \t Name: {p.name} \t Price: {p.price}')
+
+
