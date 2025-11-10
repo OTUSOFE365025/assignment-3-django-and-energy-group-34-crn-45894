@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Cash Register</title>
+    <style>
+      body {
+        font-family: system-ui;
+        margin: 2rem;
+      }
+      .card {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        max-width: 520px;
+      }
+      .row {
+        margin: 0.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cash Register (Django ORM)</h1>
+    <div class="card">
+      <form method="post">
+        {% csrf_token %}
+        <div class="row">{{ form.upc }}</div>
+        <button type="submit">Scan</button>
+      </form>
+
+      {% if product %}
+      <hr />
+      <h3>{{ product.name }}</h3>
+      <p>Price: ${{ product.price }}</p>
+      {% elif not_found %}
+      <hr />
+      <p>No product found for that UPC.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

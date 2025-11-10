@@ -1,101 +1,80 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/-cPJVYMd)
 Django ORM Standalone
 =====================
+**Group 34: Assignment 3**
+
+Sameer Karodia - 100918242
+
+Sahil Asifi - 100914271
+
+Sami Salah - 100827346
 
 ![Django](https://img.shields.io/badge/Django_ORM-Standalone-blue)
 ![Python](https://img.shields.io/badge/Python-yellow)
 
-Use the database components of Django without having to use the rest of Django (i.e. running a web server)! :tada: A typical use case for using this template would be if you are writing a python script and you would like the database functionality provided by Django, but have no need for the request/response functionalty of a client/server web application that Django also provides. 
 
-With this project template you can write regular python scripts and use Django's excellent ORM functionality with the database backend of your choice. This makes it convienient for Djangonauts to write database driven python applications with the familiar and well polished Django ORM. Enjoy.
+## :gear: Requirements
 
-:gear: Requirements
--------------------
 - Last tested successfully with Python 3.10.4 and Django 5.0.6
 - Create venv and pip install django to import the required modules.
 
-:open_file_folder: File Structure
----------------------------------
+## :open_file_folder: File Structure
+
 ```
 django-orm/
 ├── db/
 │   ├── __init__.py
 │   └── models.py
+|   |__ views.py
+├──templates
+|   ├── db
+|        ├──scan.html
 ├── main.py
 ├── manage.py
 ├── README.md
+├── urls.py
 └── settings.py
 ```
 
-__The main.py file is the entry point for the project, and where you start your code. You automatically get access to your models via ```from db.models import *```
-Think of it like a plain old python file, but now with the addition of Django's feature-rich models.__ :smiling_face_with_three_hearts:
+**Description Of Files:**
 
-__The db/models.py is where you configure your typical Django models.__ There is a toy user model included as a simple example. After running the migrations command in the quick setup below, a db.sqlite3 file will be generated. The settings.py file is where can swap out the sqlite3 database for another database connection, such as Postgres or AmazonRDS, if you wish. For most applications, sqlite3 will be powerful enough. But if you need to swap databases down the road, you can easily do so, which is one of the benefits of using the Django ORM. 
+manage.py - The command-line entry point for the Django project. You use it to run the server, make migrations, and interact with Django.
 
-:rocket: Quick Setup
---------------------
-Create a folder for your project on your local machine
-```
-mkdir myproject; cd myproject
-```
-Create a virtual environment and install django
-```
-python -m venv venv; source venv/bin/activate; pip install django
-```
-Download this project template from GitHub
-```
-git clone git@github.com:dancaron/Django-ORM.git; cd Django-ORM
-```
-Initialize the database
-```
-python manage.py makemigrations db; python manage.py migrate
-```
-Run the project
-```
-python main.py
-```
+settings.py - The main configuration file for the project — defines database settings, installed apps, template paths, middleware, etc.
 
-Feel free to send pull requests if you want to improve this project.
+urls.py - Maps web URLs (like /) to specific view functions (such as scan_view) that handle requests. It’s the project’s routing table.
 
-:crystal_ball: Example
-----------------------
-After running Quick Start above: 
+main.py - The custom script to seed (populate) the database with product data.
 
-Code in db/models.py:
-```
-# Sample User model
-class User(models.Model):
-    name = models.CharField(max_length=50, default='Dan')
+**init**.py - Marks the folder as a Python package so Django can import it.
 
-    def __str__(self):
-        return self.name
-```
-Code in main.py:
-```
-# Seed a few users in the database
-User.objects.create(name='Dan')
-User.objects.create(name='Robert')
+models.py - Defines the database structure — here we define the Product model with UPC, name, and price fields.
 
-for u in User.objects.all():
-    print(f'ID: {u.id} \tUsername: {u.name}')
-```
-Output from command: ```python main.py```
-```
-ID: 1	Username: Dan
-ID: 2	Username: Robert
-```
+views.py - Contains logic for handling user requests and returning responses .
 
-:mortar_board: Django Models
-----------------------------
+scan.html - The front-end HTML file rendered by views.py. It shows the input form for UPC scanning and displays product details.
 
-Link: [How to Use Django Models](https://docs.djangoproject.com/en/3.1/topics/db/models/)
 
-License
--------
+**How to Run:**
 
-The MIT License (MIT) Copyright (c) 2024 Dan Caron
+python manage.py makemigrations db
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+python manage.py migrate
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+python main.py (to see database contents)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+python manage.py runserver (to run with the UI and scan products)
+
+
+**Successfull Screenshots:**
+
+<img width="691" height="815" alt="image" src="https://github.com/user-attachments/assets/9a479c4d-c5fa-4dc3-9744-33d8c4ed7464" />
+
+<img width="587" height="280" alt="image" src="https://github.com/user-attachments/assets/2ac41177-738a-45a4-bb06-2cd11b95c853" />
+
+<img width="554" height="300" alt="image" src="https://github.com/user-attachments/assets/57ee1aed-d716-42ce-a7ac-854edc6c974b" />
+
+<img width="573" height="266" alt="image" src="https://github.com/user-attachments/assets/dc3d91d0-f973-4d67-8a9b-1891ad4b4f2e" />
+
+
+
