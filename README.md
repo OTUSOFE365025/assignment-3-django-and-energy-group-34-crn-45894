@@ -12,9 +12,6 @@ Sami Salah - 100827346
 ![Django](https://img.shields.io/badge/Django_ORM-Standalone-blue)
 ![Python](https://img.shields.io/badge/Python-yellow)
 
-Use the database components of Django without having to use the rest of Django (i.e. running a web server)! :tada: A typical use case for using this template would be if you are writing a python script and you would like the database functionality provided by Django, but have no need for the request/response functionalty of a client/server web application that Django also provides.
-
-With this project template you can write regular python scripts and use Django's excellent ORM functionality with the database backend of your choice. This makes it convienient for Djangonauts to write database driven python applications with the familiar and well polished Django ORM. Enjoy.
 
 ## :gear: Requirements
 
@@ -57,6 +54,7 @@ views.py - Contains logic for handling user requests and returning responses .
 
 scan.html - The front-end HTML file rendered by views.py. It shows the input form for UPC scanning and displays product details.
 
+
 **How to Run:**
 
 python manage.py makemigrations db
@@ -67,4 +65,16 @@ python main.py (to see database contents)
 
 python manage.py runserver (to run with the UI and scan products)
 
+
 **Successfull Screenshots:**
+
+<img width="691" height="815" alt="image" src="https://github.com/user-attachments/assets/9a479c4d-c5fa-4dc3-9744-33d8c4ed7464" />
+
+<img width="587" height="280" alt="image" src="https://github.com/user-attachments/assets/2ac41177-738a-45a4-bb06-2cd11b95c853" />
+
+<img width="554" height="300" alt="image" src="https://github.com/user-attachments/assets/57ee1aed-d716-42ce-a7ac-854edc6c974b" />
+
+<img width="573" height="266" alt="image" src="https://github.com/user-attachments/assets/dc3d91d0-f973-4d67-8a9b-1891ad4b4f2e" />
+
+
+
