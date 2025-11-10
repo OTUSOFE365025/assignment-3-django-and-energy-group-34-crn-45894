@@ -35,18 +35,28 @@ django-orm/
 **Description Of Files:**
 
 manage.py - The command-line entry point for the Django project. You use it to run the server, make migrations, and interact with Django.
+
 settings.py - The main configuration file for the project — defines database settings, installed apps, template paths, middleware, etc.
+
 urls.py - Maps web URLs (like /) to specific view functions (such as scan_view) that handle requests. It’s the project’s routing table.
+
 main.py - The custom script to seed (populate) the database with product data.
+
 **init**.py - Marks the folder as a Python package so Django can import it.
+
 models.py - Defines the database structure — here we define the Product model with UPC, name, and price fields.
+
 views.py - Contains logic for handling user requests and returning responses .
+
 scan.html - The front-end HTML file rendered by views.py. It shows the input form for UPC scanning and displays product details.
 
 **How to Run:**
 python manage.py makemigrations db
+
 python manage.py migrate
+
 python main.py (to see database contents)
+
 python manage.py runserver (to run with the UI and scan products)
 
-Successfull Screenshots:
+**Successfull Screenshots:**
