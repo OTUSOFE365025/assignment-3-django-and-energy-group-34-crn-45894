@@ -1,6 +1,13 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/-cPJVYMd)
 Django ORM Standalone
 =====================
+**Group 34: Assignment 3**
+
+Sameer Karodia - 100918242
+
+Sahil Asifi - 100914271
+
+Sami Salah - 100827346
 
 ![Django](https://img.shields.io/badge/Django_ORM-Standalone-blue)
 ![Python](https://img.shields.io/badge/Python-yellow)
@@ -51,6 +58,7 @@ views.py - Contains logic for handling user requests and returning responses .
 scan.html - The front-end HTML file rendered by views.py. It shows the input form for UPC scanning and displays product details.
 
 **How to Run:**
+
 python manage.py makemigrations db
 
 python manage.py migrate
